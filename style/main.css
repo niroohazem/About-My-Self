@@ -1,0 +1,505 @@
+:root {
+  --main-color: #110720;
+  --second-color: #ffffff;
+  --main-font-family: "Rubik Glitch", system-ui;
+  --second-font-family: "Poppins", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+a {
+  color: var(--second-color);
+  text-decoration: none;
+}
+/* ===== BODY ===== */
+body {
+  background: #110720;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+  user-select: none;
+  transition: 0.6s ease;
+  padding-top: 90px;
+  font-family: var(--second-font-family);
+}
+
+/* Light effect */
+body.on {
+  background:
+    radial-gradient(circle at center, #763cac, transparent 60%),
+    var(--main-color);
+
+  transition: 0.15s ease;
+}
+
+/* Navbar */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  height: 90px;
+
+  background: rgba(17, 7, 32, 0.6) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px) !important;
+  z-index: 1000;
+  color: var(--second-color);
+  border-bottom: 0.1px solid
+    color-mix(in oklab, var(--second-color) 10%, transparent);
+}
+
+.navbar .name-logo .navbar-name {
+  font-family: var(--main-font-family);
+  font-size: 30px;
+}
+.navbar .name-logo .logo img {
+  width: 90px;
+}
+
+.navbar .nav-link {
+  color: var(--second-color);
+  font-size: 16px;
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.5s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse.show .nav-link::after {
+    width: 0 !important;
+  }
+
+  .navbar-collapse.show .nav-link:hover::after {
+    width: 0 !important;
+  }
+  .nav-link.active::after {
+    width: 0 !important;
+  }
+}
+
+@media (max-width:991px){
+  .navbar-collapse{
+    background: rgba(17,7,32,0.95);
+    padding:20px;
+    border-radius:15px;
+    margin-top:10px;
+  }
+  .navbar .container-fluid{
+    padding-left:15px !important;
+    padding-right:15px !important;
+  }
+}
+
+/* ===== Rope ===== */
+.rope-container {
+  position: fixed;
+  left: 60px;
+  top: 107px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+
+.rope {
+  width: 4px;
+  height: 200px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1),
+    rgba(106, 17, 203, 0.7),
+    rgba(37, 117, 252, 0.7)
+  );
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(106, 17, 203, 0.6);
+  transition: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  cursor: grab;
+}
+
+.knob-logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: grab;
+  box-shadow: 0 0 25px rgba(106, 17, 203, 0.6);
+  transition: 0.2s ease;
+  user-select: none;
+}
+
+.knob-logo:active {
+  cursor: grabbing;
+}
+@media (max-width:991px){
+  .rope-container{
+    display:none;
+  }
+}
+
+/* ===== HEADER ===== */
+.heder {
+   max-width: 1200px;
+  margin: auto;
+}
+.header-section .photo .Me {
+  position: absolute;
+  left: 30px;
+  width: 350px;
+}
+.header-section .about-me {
+  position: relative;
+}
+.header-section .photo {
+  position: relative;
+}
+
+.header-section .about-me img {
+  position: absolute;
+  right: 540px;
+  top: -13px;
+}
+.header-section .about-me .pragra h3 {
+  font-size: 18px;
+}
+.header-section .about-me .pragra .text-purple {
+  color: lab(63.6946% 47.6127 -59.2066);
+}
+.header-section .about-me .pragra .Dev {
+  font-size: 24px;
+  margin-top: 60px;
+}
+.header-section .about-me .pragra h1 {
+  font-size: 72px;
+}
+.header-section .about-me .pragra .absolute {
+  left: 220px;
+  top: 220px;
+}
+.header-section .about-me .pragra .cover {
+  background: linear-gradient(90deg, #a684ff, #7f22fe);
+  background-clip: text;
+  color: transparent;
+}
+
+.container-fluid .how-me h1 {
+  font-size: 48px;
+  margin-top: 25px;
+  font-weight: 700;
+}
+
+.container-fluid .how-me p {
+  font-size: 18px;
+  margin-top: 60px;
+  max-width: 42rem;
+  line-height: 1.6;
+}
+
+/* Work Experience  */
+
+.Work-Experience {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 20px;
+}
+.Work-Experience .header-work {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.Work-Experience .header-work h1 {
+  font-size: 48px;
+  font-weight: 800;
+}
+
+.card-box {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  background: linear-gradient(
+    to right,
+    #020617,
+    lab(15 38.52 -44.15),
+    lab(3 4.47 -15.43)
+  );
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 45px;
+
+  border-top: 3px solid lab(36 69.12 -79.77);
+
+  transition: 0.4s ease;
+}
+
+.card-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(124, 58, 237, 0.3);
+}
+
+.card-box img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+.text-card {
+  text-align: start;
+}
+
+.card-box h3 {
+  color: white;
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+.card-box p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  line-height: 1.5;
+}
+ /* Skills */
+.skills{
+  margin-block: 100px;
+}
+
+ .headline {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    margin-bottom: 90px;
+    position: relative;
+  }
+
+  .headline h2 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #e8e4f5;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.4rem;
+  }
+
+  .headline h2 span {
+    color: #c27aff;
+    font-style: italic;
+  }
+
+  .headline p {
+    font-size: 14px;
+    color: var(--second-color);
+    font-weight: 300;
+  }
+
+  /* icon skills */
+ .icon-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+.scene {
+   display: flex;
+    justify-content: center;
+    position: relative;
+    width: 520px;
+    height: 430px;
+   
+  }
+
+  /* ---- Orbital ellipses ---- */
+  .orbit-platform {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 170px;
+    pointer-events: none;
+    z-index: 5;
+  }
+  .orbit-ring {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    border: 2px solid #432163;
+  }
+  .orbit-ring:nth-child(1) { width: 260px;  height: 100px; }
+  .orbit-ring:nth-child(2) { width: 500px;  height: 120px; }
+  .orbit-ring:nth-child(3) { width: 610px;  height: 150px; }
+  .orbit-ring:nth-child(4) { width: 730px;  height: 200px; bottom: -10px; }
+
+  /* ---- Mini dots orbiting ---- */
+  .orbit-dot {
+    position: absolute;
+    padding: 8px;
+    border-radius: 50%;
+    border: 1px solid #432163;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    opacity: 0.5;
+    z-index: 6;
+  }
+  .orbit-dot img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    filter: saturate(0.6) brightness(0.75);
+  }
+
+  /* ---- SVG Lines ---- */
+  .lines-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 13;
+    opacity: 0;
+    transition: opacity 0.35s ease 0.1s;
+  }
+  .lines-svg line {
+    stroke:#432163;
+    stroke-width: 1;
+  }
+  .scene:hover .lines-svg { opacity: 1; }
+
+  /* ---- Skills container ---- */
+  .skills-container {
+  
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    pointer-events: none;
+    z-index: 15;
+  }
+  .skills-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  /* ---- Skill icon ---- */
+  .skill-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #1a1530;
+    border: 1px solid rgba(147,112,219,0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(22px) scale(0.75);
+    transition: opacity 0.3s ease, transform 0.3s ease,
+                border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    pointer-events: none;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.45);
+  }
+  .skill-icon img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* stagger delays — row 1 */
+  .skills-row:nth-child(1) .skill-icon:nth-child(1) { transition-delay: 0.00s; }
+  .skills-row:nth-child(1) .skill-icon:nth-child(2) { transition-delay: 0.05s; }
+  .skills-row:nth-child(1) .skill-icon:nth-child(3) { transition-delay: 0.10s; }
+  .skills-row:nth-child(1) .skill-icon:nth-child(4) { transition-delay: 0.15s; }
+  .skills-row:nth-child(1) .skill-icon:nth-child(5) { transition-delay: 0.20s; }
+  /* row 2 */
+  .skills-row:nth-child(2) .skill-icon:nth-child(1) { transition-delay: 0.04s; }
+  .skills-row:nth-child(2) .skill-icon:nth-child(2) { transition-delay: 0.09s; }
+  .skills-row:nth-child(2) .skill-icon:nth-child(3) { transition-delay: 0.14s; }
+  .skills-row:nth-child(2) .skill-icon:nth-child(4) { transition-delay: 0.19s; }
+
+  .scene:hover .skill-icon {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+  }
+  .skill-icon:hover {
+    border-color: rgba(168,139,250,0.75);
+    background: #231a45;
+    transform: scale(1.15) !important;
+    box-shadow: 0 0 18px rgba(138,92,246,0.45);
+  }
+
+  /* ---- Central orb ---- */
+  .central-orb {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 155px;
+    height: 152px;
+    cursor: pointer;
+    z-index: 20;
+  }
+  .orb-glow {
+    position: absolute;
+    inset: -30px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(102, 29, 170, 0.288) 0%, transparent 70%);
+    transition: all 0.4s ease;
+  }
+  .orb-body {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 38% 32%, #7c4dcc 0%, #3b1f7a 50%, #1e0f45 100%);
+    box-shadow:
+      0 0 30px rgba(138,92,246,0.4),
+      0 0 60px rgba(138,92,246,0.2),
+      inset 0 1px 0 rgba(255,255,255,0.15);
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .orb-mark { width: 60px; height: 60px; opacity: 0.95; }
+
+  .scene:hover .orb-glow {
+    background: radial-gradient(circle, rgba(138,92,246,0.45) 10%, transparent 40%);
+    inset: -50px;
+  }
+  .scene:hover .orb-body {
+    box-shadow:
+      0 0 150px rgba(138,92,246,0.6),
+      0 0 120px rgba(138,92,246,0.3),
+      inset 0 1px 0 rgba(255,255,255,0.2);
+  }
