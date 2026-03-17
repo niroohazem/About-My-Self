@@ -102,16 +102,13 @@ body.on {
 }
 
 @media (max-width: 991px) {
+ 
   .navbar-collapse {
     background: rgba(17, 7, 32, 0.95);
     padding: 20px;
     border-radius: 15px;
-    margin-top: 10px;
   }
-  .navbar .container-fluid {
-    padding-left: 15px !important;
-    padding-right: 15px !important;
-  }
+
 }
 
 /* ===== Rope ===== */
@@ -163,6 +160,9 @@ body.on {
   .rope-container {
     display: none;
   }
+  .navbar-nav.gap-4 {
+    gap: 0 !important;
+  }
 }
 
 /* ===== HEADER ===== */
@@ -170,16 +170,34 @@ body.on {
   max-width: 1200px;
   margin: auto;
 }
-.header-section .photo .Me {
-  position: absolute;
-  left: 30px;
-  width: 350px;
-}
+
 .header-section .about-me {
   position: relative;
 }
+
 .header-section .photo {
   position: relative;
+  width: 350px;
+  height: 400px;
+  flex-shrink: 0;
+}
+
+.header-section .photo .max-w-md {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+.header-section .photo .Me {
+  position: absolute;
+  z-index: 1;
+  width: 350px;
+  left: 0;
+  bottom: 0;
 }
 
 .header-section .about-me img {
@@ -209,18 +227,155 @@ body.on {
   background-clip: text;
   color: transparent;
 }
-
-.container-fluid .how-me h1 {
+.heder .how-me h1 {
   font-size: 48px;
   margin-top: 25px;
   font-weight: 700;
 }
-
-.container-fluid .how-me p {
+.heder .how-me p {
   font-size: 18px;
   margin-top: 60px;
   max-width: 42rem;
   line-height: 1.6;
+}
+
+/* ===== Desktop ===== */
+.hello-part,
+.judges-part {
+  display: none;
+}
+
+/* ===== Tablet + Mobile ===== */
+@media (max-width: 991px) {
+  .heder{
+    text-align: center;
+
+  }
+  .about-me {
+    display: none !important;
+  }
+
+  .header-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  
+
+  .hello-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    order: 1;
+  }
+
+  .hello-part .about-img {
+    position: relative;
+  }
+  .hello-part .about-img img {
+    position: absolute;
+    left:50px;
+    top: -30px;
+    width: 100px;
+    transform: scaleX(-1);
+
+  }
+
+  .hello-part h3 {
+    font-size: 18px; 
+  }
+
+  .hello-part .text-purple {
+    color: lab(63.6946% 47.6127 -59.2066);
+  }
+
+  .header-section .photo {
+    order: 2;
+   
+  }
+
+  .header-section .photo .Me{
+    width: 410px;
+  }
+
+  .judges-part {
+    margin-top: 20px;
+    display: block;
+    order: 3;
+    width: 100%;
+    text-align: center;
+  }
+ 
+  .judges-part h1 span.realtive {
+    position: relative;
+    display: inline-block;
+  }
+
+  .judges-part h1 span.realtive img {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 110%;
+  }
+    .judges-part .cover{
+      padding-inline: 10px;
+    }
+
+  .judges-part .Dev {
+    font-size: 20px;
+    /* margin-top: 300px; */
+  }
+
+  .judges-part h1 {
+    font-size: 48px;
+  }
+
+  .judges-part .cover {
+    background: linear-gradient(90deg, #a684ff, #7f22fe);
+    background-clip: text;
+    color: transparent;
+  }
+
+  .heder .how-me h1 {
+    font-size: 34px;
+  }
+
+  .heder .how-me p {
+    font-size: 16px;
+    margin-top: 30px;
+    max-width: 100%;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 575px) {
+
+  
+  .hello-part h3 {
+    font-size: 15px;
+  }
+
+  .judges-part h1 {
+    font-size: 48px;
+  }
+
+  .judges-part .Dev {
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .heder .how-me h1 {
+    font-size: 24px;
+  }
+
+ 
 }
 
 /* Work Experience  */
@@ -494,6 +649,7 @@ body.on {
   transform: scale(1.15) !important;
 }
 
+
 /* ---- Central orb ---- */
 .central-orb {
   position: absolute;
@@ -604,7 +760,13 @@ body.on {
 .projects .link-githup i {
   font-size: 25px;
 }
-
+@media (max-width: 768px) {
+  .projects .content .description {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+}
+ 
 /* Contact */
 .contact {
   text-align: center;
@@ -653,3 +815,4 @@ margin-top: 30px;
 font-size: 14px;
 color: #c0baba;
 }
+
