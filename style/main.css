@@ -110,7 +110,6 @@ body.on {
   }
 
 }
-
 /* ===== Rope ===== */
 .rope-container {
   position: fixed;
@@ -650,6 +649,7 @@ body.on {
 }
 
 
+
 /* ---- Central orb ---- */
 .central-orb {
   position: absolute;
@@ -767,6 +767,22 @@ body.on {
   }
 }
  
+@media (max-width: 768px) {
+  
+  .icon-section {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .projects {
+    padding: 0 15px;
+  }
+
+  .Work-Experience {
+    padding: 80px 15px;
+  }
+}
+
 /* Contact */
 .contact {
   text-align: center;
