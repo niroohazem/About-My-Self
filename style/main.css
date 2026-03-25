@@ -109,16 +109,13 @@ body.on {
     padding: 20px;
     border-radius: 15px;
   }
+  .navbar{
+   display: flex;
+   justify-content: space-between;
+   gap: 20px;
+   padding: 0;
+  }
   
-}
-
-@media (max-width: 576px) {
- .navbar{
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 0;
- }
 }
 
 /* ===== Rope ===== */
