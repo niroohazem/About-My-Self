@@ -30,7 +30,7 @@ body {
 /* Light effect */
 body.on {
   background:
-    radial-gradient(circle at center, #763cac, transparent 60%),
+    radial-gradient(circle at 50% 15%, #2a1150, transparent 20%),
     var(--main-color);
 
   transition: 0.15s ease;
@@ -110,14 +110,10 @@ body.on {
     border-radius: 15px;
   }
   .navbar{
-   display: flex;
-   justify-content: space-between;
-   gap: 20px;
-   padding: 0;
+    padding: 0;
   }
-  
-}
 
+}
 /* ===== Rope ===== */
 .rope-container {
   position: fixed;
@@ -212,6 +208,9 @@ body.on {
   right: 540px;
   top: -13px;
 }
+.header-section .about-me .pragra{
+margin-left: 100px;
+}
 .header-section .about-me .pragra h3 {
   font-size: 18px;
 }
@@ -226,7 +225,7 @@ body.on {
   font-size: 72px;
 }
 .header-section .about-me .pragra .absolute {
-  left: 220px;
+  left: 320px;
   top: 220px;
 }
 .header-section .about-me .pragra .cover {
@@ -247,17 +246,21 @@ body.on {
 }
 
 /* ===== Desktop ===== */
-.hello-part,
-.judges-part {
-  display: none;
+@media (min-width: 991px){
+
+  .hello-part,
+  .judges-part{
+    display: none;
+  }
 }
 
 /* ===== Tablet + Mobile ===== */
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
   .heder{
     text-align: center;
 
   }
+
   .about-me {
     display: none !important;
   }
@@ -303,12 +306,18 @@ body.on {
 
   .header-section .photo {
     order: 2;
-    width: 100%;
+    width: 280px;
+    height: 280px;
    
   }
 
- 
- }
+
+  .header-section .photo .max-w-md {
+    max-width: 330px;
+    height: 480px;
+
+  }
+
   .judges-part {
     margin-top: 20px;
     display: block;
@@ -335,8 +344,8 @@ body.on {
     }
 
   .judges-part .Dev {
-    font-size: 20px;
-    /* margin-top: 300px; */
+    font-size: 25px;
+    margin-top: 100px;
   }
 
   .judges-part h1 {
@@ -361,6 +370,7 @@ body.on {
 }
 
 /* ===== Mobile ===== */
+
 @media (max-width: 575px) {
 
   
@@ -491,11 +501,17 @@ body.on {
 }
 
 @media (max-width: 768px) {
-  .scene{
+  .icon-section{
     margin-top: 20px;
   }
 }
 
+@media (max-width: 1024px) {
+  .Work-Experience{
+    margin-right: 20px;
+  }
+
+}
 
 /* ---- Orbital ellipses ---- */
 .orbit-platform {

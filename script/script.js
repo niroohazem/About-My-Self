@@ -1,3 +1,4 @@
+
 const rope = document.getElementById("rope");
 const knob = document.querySelector(".knob-logo");
 
